@@ -1,0 +1,4 @@
+mysql_s:
+  db: root:wls20170807@tcp(localhost:3306)/open_devops?charset=utf8mb4&parseTime=True&loc=Local
+  max: 10
+  idle: 10
