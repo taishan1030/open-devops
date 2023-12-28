@@ -8,7 +8,7 @@ import (
 	"github.com/prometheus/common/promlog"
 	promlogflag "github.com/prometheus/common/promlog/flag"
 	"github.com/prometheus/common/version"
-	"open-devops/src/models"
+	"open-devops/src/database"
 	"open-devops/src/modules/server/config"
 	"os"
 	"path/filepath"
@@ -76,6 +76,16 @@ func main() {
 	}
 	level.Info(logger).Log("msg", "load.config.success", "file.path", *configFile, "content.mysql", sConfig.MysqlS.DB)
 
-	models.InitMysql(sConfig.MysqlS)
+	// 初始化 mysql
+	database.InitMysql(sConfig.MysqlS)
 	level.Info(logger).Log("msg", "load.mysql.success")
+
+	//models.StreePathAddTest(logger)
+	//models.StreePathQueryTest(logger)
+	//models.StreePathDelTest(logger)
+
+	// go 编排
+	//var g run.Group
+	//ctxAll, cancelAll := context.WithCancel(context.Background())
+
 }

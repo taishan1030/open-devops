@@ -1,4 +1,4 @@
-package models
+package database
 
 import (
 	"fmt"
@@ -47,4 +47,10 @@ func InitMysql(mysqlS *config.MySQLConf) {
 
 	}
 	fmt.Println("MysqlConnectSuccess")
+}
+
+// GetDb - get a database connection
+func GetDb() *gorm.DB {
+	//log.Info(fmt.Sprintf("%#v", db))
+	return db
 }
