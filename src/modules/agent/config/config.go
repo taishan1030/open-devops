@@ -6,15 +6,8 @@ import (
 	"io/ioutil"
 )
 
-type MySQLConf struct {
-	DB   string `yaml:"db"`
-	Max  int    `yaml:"max"`
-	Idle int    `yaml:"idle"`
-}
-
 type Config struct {
-	MysqlS  *MySQLConf `yaml:"mysql_s"`
-	RpcAddr string     `yaml:"rpc_addr"`
+	RpcServerAddr string `yaml:"rpc_server_addr"`
 }
 
 // 根据io read读取配置文件后的字符串解析yaml
